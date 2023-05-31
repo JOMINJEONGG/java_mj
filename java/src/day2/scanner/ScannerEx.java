@@ -1,6 +1,7 @@
 package day2.scanner;
 
-import java.util.*;//java package 안의 until안에 있는 모든(*) 것을 가지고 오겠다라는 의미로 적은것 or ctrl + shift + F5
+import java.util.Scanner; //java package 안의 util안에 있는 모든(*) 것을 가지고 오겠다라는 의미로 적은것 
+						 // 아니면 'ctrl + shift + O' 입력하면 import java.util.Scanner; 이것의 나옴
 
 public class ScannerEx {
 
@@ -18,7 +19,7 @@ public class ScannerEx {
 		System.out.println(num2);
 		
 		System.out.println("문자열1을 입력하세요.");
-		sc.nextLine();//
+		sc.nextLine();//입력되는 값이랑 엔터 하나가 같이 입력되고 나머지 값은 뒤로 넘어감 그것 때문에 영향 받기 싫으면 이와 같은 내용 쓰기 
 		String str1 = sc.nextLine(); // 스페이스를 포함한 문자열 한줄을 읽어옴(마지막 입력한 엔터포함)
 		System.out.println(str1);
 	
@@ -26,9 +27,10 @@ public class ScannerEx {
 		String str2 = sc.next();//첫번째 문자부터 읽어와서 다음 공백(엔터,스페이스)가 오기전까지 읽어옴
 		System.out.println(str2);
 		
+		sc.nextLine();//이것을 써야 앞에서 입력받지 않은 것들이 뒤에 영향을 미치지 않아 제대로 된 값을 출력할 수 있다.
 		System.out.println("문자를 입력하세요.");
 		char ch = sc.next().charAt(0);
-		//nest()를 이용하여 한 단어를 읽어오고 
+		//next()를 이용하여 한 단어를 읽어오고 
 		//charAt(0)를 이용하여 단어의 첫글자를 가져옴
 		System.out.println(ch);
 		
