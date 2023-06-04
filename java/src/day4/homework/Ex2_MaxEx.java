@@ -14,9 +14,8 @@ public class Ex2_MaxEx {
 		num2 = sc.nextInt();
 		if(num1 > num2) {
 			System.out.println(num1 + " a larger number");
-		}else if(num2 > num1) {
-			System.out.println(num2 + " a larger number");
 		}else {
+			System.out.println(num2 + " a larger number");
 		}
 		sc.close();
 	}

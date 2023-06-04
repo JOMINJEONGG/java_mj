@@ -13,7 +13,7 @@ public class NestedIfEx {
 			//3의 배수 ==> 6의 배수 6, 12, 18
 			if(num % 3 == 0) {
 				System.out.println("A multiple of 6");
-			}
+			}// 2의 배수 중에 3의 배수인것은 6의 배수이다
 			//아닌 수 ==> 2의 배수 2, 4, 8, 10
 			else {
 				System.out.println("A multiple of 2");			
