@@ -18,7 +18,7 @@ public class EX1_ScoreAverageEx {
 		Math = sc.nextInt();
 
 		int total = Korean + English + Math;
-		double average = total / 3;
+		double average = total / 3; //(double)했었어야했는데 안하면 값 안나옴 10 20 31 입력하면 결과값 뒤에 실수 안나온다 틀림!!
 		System.out.println(average);
 		average = sc.nextDouble();
 		sc.close();
