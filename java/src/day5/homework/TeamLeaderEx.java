@@ -20,7 +20,7 @@ public class TeamLeaderEx {
 		* 3, 6, 9... 3의 배수들이 조장이됨
 		* 3으로 나눴을 때 나머지가 0인 것이 조장이 된다.
 		**/
-		
+		//선생님거랑 똑같음 처음으로 맞았다!!!
 		int num;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("input student number : ");
