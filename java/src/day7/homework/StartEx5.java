@@ -3,65 +3,48 @@ package day7.homework;
 public class StartEx5 {
 
 	public static void main(String[] args) {
-		/* 	  *			i=1 공백=3	 *=0
-		 *   ***		i=2 공백=2	 *=1
-		 *  *****		i=3 공백=1	 *=2
-		 * *******		i=4 공백=0	 *=3
-		 *  *****		i=3 공백=1	 *=2
-		 *   ***		i=2 공백=2	 *=1
-		 *    *			i=1 공백=3	 *=0
-		 *    				공백=5-i  *=i *=i-1
+		/* 	  *			i=1 공백=3	 		 *=1
+		 *   ***		i=2 공백=2	 		 *=3
+		 *  *****		i=3 공백=1	 		 *=5
+		 * *******		i=4 공백=0	 		 *=7
+		 * 					공백=half-i  	     *=2*i-1 
+		 * 
+		 *  *****		i=5 공백=1	 		 *=5 = 2*(3)-1 / 5+3=8
+		 *   ***		i=6 공백=2			 *=3 = 2*(2)-1 / 6+2=8
+		 *    *			i=7 공백=3			 *=1 = 2*(1)-1 / 7+1=8
+		 *  				공백=i-half(4)	 *=2*(num+1-i)-1 = 2*(num-i)+1
 		 * 이와 같이 출력되도록 반복문을 이용해보자
 		 * */
 		
-		/* 외부반복문
-		 * 반복횟수 : i는 1부터 4까지 1씩 증가
-		 * 실행문 : *i개를 출력 후 엔터
-		 * */
-		for(int i = 1 ; i <= 4 ; i++){
-			/* 내부반복문
-			 * 반복횟수 : i는 3부터 1까지 1씩 감소
-			 * 실행문 : i개를 출력
-			 * */
-			for(i = 3 ; i >= 1 ; i--) {
-				//공백을 출력
-				/* 내부반복문
-				 * 반복횟수 : j는 1부터 5-i까지 1씩 증가
-				 * 규칙성 : ' '를 출력
-				 * */
-				for(int j = 3 ; j <= 5-i ; j--) {
+		int num = 7;
+		for(int i = 1 ; i <= num ; i++) {
+			int half = (num + 1) / 2;
+			//4줄 => (num + 1) /2
+			if(i <= half) {
+				//half-i개 공백 출려
+				for(int j = 1 ; j <= half-i ; j++) {
 					System.out.print(' ');
 				}
+				//2*i-1 출력
+				for(int j = 1 ; j <= 2*i-1 ; j++) {
+					System.out.print('*');
+				}
+				//엔터
+				System.out.println();
+			}	
+			//3줄
+			else {
+				//i-half개 공백 출려
+				for(int j = 1 ; j <= i-half ; j++) {
+					System.out.print(' ');
+				}
+				//2*(num-i)+1 출력
+				for(int j = 1 ; j <= 2*(num-i)+1 ; j++) {
+					System.out.print('*');
+				}
+				//엔터
+				System.out.println();
 			}
-			
-			
-			//공백을 출력
-			/* 내부반복문
-			 * 반복횟수 : j는 1부터 5-i까지 1씩 증가
-			 * 규칙성 : ' '를 출력
-			 * */
-			for(int j = 1 ; j <= 5-i ; j++) {
-				System.out.print(' ');
-			}
-			/* * i개를 출력
-			 * 내부반복문
-			 * 반복횟수 : j는 1부터 i까지 1씩 증가
-			 * 규칙성 : *을 출력
-			 * */
-			for(int j = 1 ; j <= i ; j++) {
-				System.out.print('*');			
-			}
-			/* * i-1개를 출력
-			 * 내부반복문
-			 * 반복횟수 : j는 1부터 i-1까지 1씩 증가
-			 * 규칙성 : *을 출력
-			 * */
-			for(int j = 1 ; j <= i-1 ; j++) {
-				System.out.print('*');			
-			}
-			//엔터
-			System.out.println();
 		}
-		
 	}
 }
