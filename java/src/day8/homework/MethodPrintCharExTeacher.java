@@ -35,11 +35,22 @@ public class MethodPrintCharExTeacher {
 		int num = 5;
 		for(int i = 1 ; i <= 5 ; i ++) {
 			//공백(' ') num - i개 출력
-			printChar(' ', num -1);
+			printChar(' ', num -i);
 			//'*'이 i개 출력 후 엔터
 			printChar('*', i, '\n');
 		}
 		
+		printChar('=', 10, '\n');
+		
+		//2)것을 String으로 응용해서 별 예제해보기
+		String str = "";
+		for(int i = 1 ; i <= 5 ; i ++) {
+			//공백(' ') num - i개 출력
+			str += printChar2(' ', num -i);
+			//'*'이 i개 출력 후 엔터
+			str += printChar('*', i, '\n');
+		}
+		System.out.println(str);
 	}
 	//1)
 	/**문자열이 주어지면 주어진 문자열을 출력ㅎ고 줄바꿈 하는 메서드
@@ -65,6 +76,16 @@ public class MethodPrintCharExTeacher {
 		}
 	}
 	
+	//2)것을 string으로 응용
+		public static String printChar2(char ch, int count){
+			String str = "";
+			for(int i = 1 ; i<=count ; i++) {
+				System.out.print(ch);
+				str += ch;
+			}
+			return str;
+		}
+		
 	//3)
 	/**문자와 개수, 마지막 문자가 주어지면 주어진 문자를 개수만큼 출력하고 마지막 문자를 출력하는 메서드
 	 * 매개변수: 문작와 개수와 마지막 문자 => char ch, int count, chat lastCh
