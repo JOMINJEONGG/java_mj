@@ -19,7 +19,7 @@ public class MethodScoreEx {
 		sc.close();
 
 	}
-	/** 정수가 주어지면 영어로 달을 알려주는 메서드
+	/** 정수가 주어지면 학점을 알려주는 메서드
 	 * 매개변수 : 점수 => int score
 	 * 리턴타입 : 학점 => String
 	 * 메서드명 : credit

@@ -24,8 +24,8 @@ public class MethodMonthEx {
 	}
 		/** 정수가 주어지면 영어로 달을 알려주는 메서드
 		 * 매개변수 : 정수 => int month
-		 * 리턴타입 : 영어 달=> String
-		 * 메서드명 : getmonth
+		 * 리턴타입 : 영어 달 => String
+		 * 메서드명 : getMonth
 		 * */
 	public static String getMonth(int month) {
 		if(month == 1) {
