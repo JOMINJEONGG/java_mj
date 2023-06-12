@@ -15,14 +15,14 @@ public class Car {
 		name = _name;
 		company = _company;
 		year = _year;
-		//speed는 int로 0으로 자동 초기화되서 초기화 안해도됨
+		//speed는 int로 0으로 자동 초기화되서 초기화 굳이 안해도됨
 		gear = 'P';
 		//power은 boolean으로 false로 자동 초기화되기 때문에 초기화 안해도됨
 	}
 	
 	 //메서드
 	 /** 자동차 정보를 출력하는 메서드
-	  * 매개변수 : 없음 
+	  * 매개변수 : 없음 // 자동차정보를 위의 멤버변수에서 알고 있어서 굳이 알 필요 없음
 	  * 리턴타입 : 없음 => void
 	  * 메서드명 : printInfo
 	  * */
@@ -37,7 +37,7 @@ public class Car {
 		 System.out.println("SPEED   : " + speed);
 	 }
 	 	 
-	 /** 속력이 1 증가/1 감소하는 메서드
+	 /** 속력이 1증가/1감소하는 메서드
 	  * 매개변수 : 증가할건지 => boolean positive
 	  * 리턴타입 : 없음 => void
 	  * 메서드명 : speedChange
@@ -59,7 +59,6 @@ public class Car {
 		 else if(speed > 0) {
 			 speed -= 1;
 		 }
-		 
 	 }
 	 
 	 /** 자동차 시동을 켜거나 끄는 메서드
@@ -79,6 +78,4 @@ public class Car {
 	public void setGear(char _gear) {
 		gear = _gear;
 	}
-	
-	
 }

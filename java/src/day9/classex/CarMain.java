@@ -1,3 +1,4 @@
+
 package day9.classex;
 
 public class CarMain {
@@ -7,6 +8,7 @@ public class CarMain {
 		 * */
 	
 		//클래스명 객체명 = new 클래스명(매개변수들);
+		//생성자에서의 순서로 매개변수들 넣기
 		Car myCar = new Car("The new AVANTE", "Hyundai", 2023);
 		//현재 내차 정보를 조회
 		myCar.turn();
