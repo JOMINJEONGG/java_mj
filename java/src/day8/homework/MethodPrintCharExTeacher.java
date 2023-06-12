@@ -25,7 +25,7 @@ public class MethodPrintCharExTeacher {
 
 		printChar('=', 10, '\n');
 		
-		//이전 수업시간 별 예제 다시 해보기
+		//2,3번을 활용한 이전 수업시간 별 예제 다시 해보기
 		/*      *
 		 *     ** 
 		 *    ***
@@ -33,7 +33,7 @@ public class MethodPrintCharExTeacher {
 		 *  *****
 		 * */
 		int num = 5;
-		for(int i = 1 ; i <= 5 ; i ++) {
+		for(int i = 1 ; i <= num ; i ++) {
 			//공백(' ') num - i개 출력
 			printChar(' ', num -i);
 			//'*'이 i개 출력 후 엔터
@@ -63,7 +63,7 @@ public class MethodPrintCharExTeacher {
 		System.out.println(str);
 	}
 	
-	//2)엔터를 치라는 말이 없어서 엔터를 밖에 쳐줘야해서 main에 단점임
+	//2)엔터를 치라는 말이 없어서 엔터를 밖에 main에 입력해서 엔터해줘야함 그게 단점임
 	/**문자와 개수가 주어지면 주어진 문자를 개수만큼 출력하는 메서드
 	 * 매개변수: 문자와 개수 => char ch, int count
 	 * 리턴타입: 리턴타입: 없음 => void
