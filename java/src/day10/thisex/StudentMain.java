@@ -5,19 +5,19 @@ public class StudentMain {
 	public static void main(String[] args) {
 		Student1.printCount();
 		
-		Student1 std1 = new Student1(1,1,1,"hong");
+		Student1 std1 = new Student1(1,1,1,"hong");//학생 객체 생성, 객체는 new 에서 만들어진다
 		Student1.printCount();
 		
 		Student1 std2 = new Student1(1,1,2,"lim");
 		Student1.printCount();
 		
-		//std2.studentCount = 1; //이렇게도 가능하지만 권장사항은 아님 노란색에 커서 가져다대면 위와 같이 바꾸라고 뜸
-		//System.out.println(std1.studentCount);
+		//std2.studentCount = 4; //이렇게도 가능하지만 권장사항은 아님 노란색에 커서 가져다대면 위와 같이 바꾸라고 뜸
+		//System.out.println(std1.studentCount); // 위에서 st2 1로 바꾸면 밑에 str1도 값이 바뀐다 static으로 공유하기 때문에
 		std1.print();
-		//Student1.print(); // 에러발생 static이 pint에는 안붙어서 메서드들은 객체를 통해 호출해야함
+		//Student1.print(); // 에러발생 static이 안붙어서 메서드들은 std1 이나 std2 와 같은 객체를 통해 호출해야함
 		std2.print();
 		
-		System.out.println(std1); // 출력하면 객체가 다르기때문에 주소가 다름
+		System.out.println(std1); // 출력하면 객체가 다르기때문에 주소가 다름-싱글톤과 연관되서 보려고 출력해본 것 임
 		System.out.println(std2);
 	}
 
@@ -32,12 +32,14 @@ public class StudentMain {
 class Student1{
 	static int studentCount; 
 	//ㄴ> 하나의 클래스로 만든 모든 객체가 '공통적인 값'을 가지는 속성이 있는 경우 static을 붙임 / 접근제어자 static자료형 변수명;
+	//학생객체가 생성될때마다 이걸로 학생 수를 세기위함
 	private int grade, classNum, number;
 	private String name;
 	
 	//생성자
 	//아래 생성자는 매개변수가 있고, 매개변수의 이름이 멤버변수와 같기 때문에 멤버 변수 호출할 때 this 반드시 붙여야함
 	public Student1(int grade, int classNum, int number, String name) {
+		//this(); => 이와같이 자기자신을 호출하면 무한루프 걸릴 수 있으니 조심하자
 		this.grade = grade;
 		this.classNum = classNum;
 		this.number = number;
@@ -50,14 +52,13 @@ class Student1{
 		//멤버변수와 이름이 같은 지역변수를 만들수도 있다(하지만 이렇게 사용하는것은 비추천)
 		//int grade = 10;
 		//this.grade = grade;
-		this(1,1,1,"");
+		this(1,1,1,"");//this 생성자는 이와같이 한줄로도 쓸 수 있다 this 아니면 하나하나 다 적어줘야함
 		name = ""; // this라는 생성자 앞에 이와같이 다른 코드가 들어가면 안됨, 이 코드는 this 아래에 있어야함
 		/* this.grade = 1;
 		classNum = 1;
 		number = 1;
 		name = "";
 		*/
-				
 	}
 	
 	//객체 메서드
@@ -77,11 +78,12 @@ class Student1{
 	public static void printCount() {
 		//클래스 변수 사용 가능
 		System.out.println("Reidtered student count : " + studentCount);
-		//객체 변수 사용 불가능(직접)
+		//객체 변수(직접 불러서)사용 불가 => 객체 변수가 만들어지기 전에 부르기 때문에 사용 불가능
 		//grade = 1;
-		//객체 메서드 사용 불가능(직접)
+		//객체 메서드 (직접 불러서)사용 불가능 => 객체 메서드가 만들어지기 전에 부르기 떄문에 사용 불가능
 		//print();
-		//직접사용은 불가능 하고 아래와 같이 객체를 만들어서 사용은 가능
+		
+		//직접사용은 불가능 하고 아래와 같이 객체를 만들어서 호출해서 사용은 가능
 		Student1 std1 = new Student1();
 		std1.name = "hong";
 		std1.print();
