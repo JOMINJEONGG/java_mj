@@ -36,7 +36,7 @@ public class AccessModifierEx {
 	}
 }
 /*정보은닉 : 클래스 내부에서 사용할 변수나 메서드를 private으로 선언해서 외부에서 접근하지 못하도록 막는것
-* 일반적으로 멤버변수는 private으로 선언, 메서드는 public으로 선언*/
+* '일반적으로' 멤버변수는 private으로 선언, 메서드는 public으로 선언, 생성자는 public. 싱글톤의 경우 private*/
 class A{
 	private int num1;
 	int num2;

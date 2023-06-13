@@ -41,7 +41,8 @@ public class StudentScoreManager {
 		
 		System.out.println(engScore.title);
 		/* <멤버변수 호출방법>
-		 * 객체명.멤버변수 = 값; => ex)위의 줄 korScore.grade = 1;
+		 * 객체명.멤버변수 = 값; => ex)위의 줄 korScore.grade = 1; // 대체로 특별한 경우만 사용
+		 * ㄴ>대체로 private으로 호출하여 이와같이 직접 불러올일이 드물기 때문에 
 		 * 객체명.메서드명(매개변수들);
 		 * =>static이라는 키워드 있으면 객체명 안써도됨
 		 * */
@@ -85,7 +86,8 @@ class Score1{
 		 grade = 1;
 		 semester = 1;
 	 } 
-	 //여러 종류의 생성자를 만들 수 있다, 클래스에 생성자가 2개 이상인 경우 => 생성자 오버로드(오버로딩)
+	 //여러 종류의 생성자를 만들 수 있다, 클래스에 생성자가 2개 이상인 경우 => 생성자 오버로드(오버로딩) 
+	 //=> 다양한 경우를 대비해서 초기화하기 위해 사용 ex) 10개 멤버 중 5개만 초기화하고싶을때
 	 //생성자가 무조건 public은 아님 private인 경우도 있는데 드물고 나중에 설명해주실 예정임
 	 public Score1(int _grade, int _semester, String _title) {
 		 grade = _grade;
@@ -160,6 +162,10 @@ class Student1{
 	 Score1 korScore, engScore, mathScore;//국어, 영어, 수학 성적 =>배열이라는것을 안배워서 약간 미완성?임
 }
 	
+/* 메서드는 메서드안에 메서드를 못넣음 
+ * class는 class안에 class를 넣을 수 있음*/
+
+
 /* 클래스는 멤버변수, 메서드,생성자로 구성
  * 멤버변수 : 속성
  * 메서드 : 기능
