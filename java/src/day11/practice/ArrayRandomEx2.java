@@ -75,11 +75,7 @@ public class ArrayRandomEx2 {
 		createRandomArray(min, max, arr);
 		printArray(arr);
 		System.out.println("========================");
-	}
-	
-	
-	
-	
+	}	
 	
 	/*for(i = 0 ; i < 3 ; i++) {
 	 * 		System.out.println(arr[i]);
