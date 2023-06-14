@@ -68,6 +68,10 @@ public class ArrayRandomEx2 {
 					count++;
 			}
 		}
+		System.out.println("========================");
+		printArray(arr);
+		
+		//방법3 : 방법2를 메서드로 변형
 		createRandomArray(min, max, arr);
 		printArray(arr);
 		System.out.println("========================");
@@ -122,7 +126,7 @@ public class ArrayRandomEx2 {
 	 * 리턴타입 : 없음 => void
 	 * 메서드명 : createRandomArray
 	 * */
-	public static void createRandomArrazy(int min, int max, int arr[]) {
+	public static void createRandomArray(int min, int max, int arr[]) {
 		//배열이 생성되어 있지 않으면(배열이 null아면) 메서드 종료
 		if(arr == null) {
 			return;
