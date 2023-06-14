@@ -85,7 +85,7 @@ class Rect1{
 		leftUpX = x;
 		leftUpY = y;
 		rightDownX = x + w;
-		rightDownY = x + h;
+		rightDownY = y + h;
 	}	
 }
 //2)
