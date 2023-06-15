@@ -10,8 +10,9 @@ public class ArrayRandomEx2 {
 		int [] arr = new int[3];
 		
 		//방법 1 : 9번지까지 있는 배열을 이용
-		//장점 : 작업이 단순 || 단점 : 저장공간이 필요
+		//장점 : 비교하는 작업이 없어서 작업이 단순 || 단점 : 저장공간이 필요
 		boolean checkArr[] = new boolean[10];
+		
 		for(int i = 0 ; i < 3 ; ) {
 			int random = (int)(Math.random() * (max-min+1) + min);
 			//checkrArr random번지에 있는 값이 false이면
@@ -27,8 +28,6 @@ public class ArrayRandomEx2 {
 		for(int i = 0 ; i < 3 ; i++) {
 			System.out.println(arr[i]);
 		}
-		printArray(arr);
-		System.out.println("========================");
 		
 		//방법 2 : 저장된 값들을 비교 => 이중 반복문 사용
 		int count = 0;//현재 저장된 랜덤 수 개수
@@ -55,26 +54,14 @@ public class ArrayRandomEx2 {
 				//arr[count++] = random; => 위의 두줄과 같음
 			}
 		}
-		printArray(arr);
-		System.out.println("========================");
 		
-		//방법3 : 방법 2를 메서드로 변형
-		count = 0;
-		while(count < 3) {
-			int random = (int)(Math.random() * (max-min+1) + min);
-			//중복되지 않으면 배열에 저장 후 count 증가
-			if(contains(arr, random, count)) {
-					arr[count] = random;
-					count++;
-			}
-		}
 		System.out.println("========================");
 		printArray(arr);
 		
 		//방법3 : 방법2를 메서드로 변형
 		createRandomArray(min, max, arr);
-		printArray(arr);
 		System.out.println("========================");
+		printArray(arr);
 	}	
 	
 	/*for(i = 0 ; i < 3 ; i++) {
@@ -136,7 +123,7 @@ public class ArrayRandomEx2 {
 		int count = 0 ;
 		while(count < 3) {
 			int random = (int)(Math.random() * (max-min+1) + min);
-			if(contains(arr, random, count)) {
+			if(!contains(arr, random, count)) {
 				arr[count] = random;
 				count++;
 			}
