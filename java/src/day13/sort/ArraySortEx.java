@@ -33,6 +33,5 @@ public class ArraySortEx {
 		for(Integer tmp : arr2) {
 			System.out.println(tmp + " ");
 		}
-
 	}
 }
