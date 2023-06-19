@@ -23,6 +23,9 @@ public class VocabularyNoteEx {
 		 *  b. 검색
 		 * 5. 프로그램 종료
 		 * */
+		
+		//내가 해본거ㅠ
+		
 		int num = 0, i = 0;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("1. 단어 추가");
@@ -30,7 +33,7 @@ public class VocabularyNoteEx {
 		System.out.println("3. 단어 수정");
 		System.out.println("4. 단어 출력");
 		System.out.println("5. 프로그램 종료");
-		System.out.println("input number : ");
+		System.out.println("메뉴 선택 : ");
 		num = sc.nextInt();
 		
 		VocabularyNote vocabularyNote = new VocabularyNote();
@@ -51,7 +54,7 @@ public class VocabularyNoteEx {
 		}else {	
 			System.out.println("프로그램 종료");
 		}
-		
+		             
 		i = sc.nextInt();
 		if(num == 3 && i == 1) {
 			System.out.println("수정할 단어 :");
