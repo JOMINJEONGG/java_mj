@@ -11,7 +11,11 @@ public class PolymorphismEx1 {
 		/*다형성이란
 		 * 하나의 코드에 여러 자료형이 올 수 있는 것
 		 * 매개변수 다형성 : 메서드의 매개변수로  부모 클래스의 객체가 오면 매개변수에 자식 클래스의 객체를 이용할 수 있음
-		 * 재정의 다형성 : 상속된 각 클래스마다 오버라이딩을 이용하여 메서드를 재정의 할 수 있음*/
+		 * 재정의 다형성 : 상속된 각 클래스마다 오버라이딩을 이용하여 메서드를 재정의 할 수 있음
+		 * 포함 다형성 : 자식 클래스로 만든 객체를 부모 클래스가 관리하는 것
+		 * =>배열로 각각 다른 객체들을 관리할 수 있음
+		 * */
+		
 		
 		//1)
 		TV tv1 = new TV();
@@ -30,14 +34,12 @@ public class PolymorphismEx1 {
 		AirConditioner1 aircon2 = new AirConditioner1();
 		RemoteControl1 remocon2 = new RemoteControl1();
 		
-		HomeAppliances appliance = tv2; //업캐스팅
+		HomeAppliances appliance = tv2;//업캐스팅
 		remocon2.turnOff(appliance);
-		
-		//가전을 켜는 기능
-		remocon2.turnOn(tv2);
-		remocon2.turnOn(aircon2);
-		remocon2.turnOn(radio2);
-		//가전을 끄는 기능
+		remocon2.turnOn(tv2);//가전을 켜는 기능
+		remocon2.turnOn(aircon2);//가전을 켜는 기능
+		remocon2.turnOn(radio2);//가전을 켜는 기능
+
 		remocon2.turnOff(tv2);
 		remocon2.turnOff(aircon2);
 		remocon2.turnOff(radio2);
@@ -60,19 +62,20 @@ class RemoteControl{
 	}
 }
 
+
 class TV{
 	boolean power;
 	int channel;
-	void turnOn(){
+	void turnOn() {
 		power = true;
 	}
 }
 
 class AirConditioner{
 	boolean power;
-	double CurrentTemperatureNow;
+	double CurrentTemperature;
 	double desiredTemperature;
-	void turnOn(){
+	void turnOn() {
 		power = true;
 	}
 }
@@ -80,7 +83,7 @@ class AirConditioner{
 class Radio{
 	boolean power;
 	double frequency;
-	void turnOn(){
+	void turnOn() {
 		power = true;
 	}
 }
@@ -95,7 +98,6 @@ class HomeAppliances{
 		power = false;
 	}
 }
-
 class RemoteControl1{
 	public void turnOn(HomeAppliances appliance) {
 		appliance.turnOn();
@@ -103,7 +105,7 @@ class RemoteControl1{
 	}
 	public void turnOff(HomeAppliances appliance) {
 		appliance.turnOff();
-		System.out.println("전원이 껴졌습니다.");
+		System.out.println("전원이 꺼졌습니다.");
 	}
 }
 
@@ -112,10 +114,9 @@ class TV1 extends HomeAppliances{
 }
 
 class AirConditioner1 extends HomeAppliances{
-	double CurrentTemperatureNow;
+	double CurrentTemperature;
 	double desiredTemperature;
 }
-
 class Radio1 extends HomeAppliances{
 	double frequency;
 }
