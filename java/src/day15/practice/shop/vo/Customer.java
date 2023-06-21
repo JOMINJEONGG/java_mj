@@ -27,6 +27,7 @@ public class Customer {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		generateCustomerId();//customerId 발급이 완료
+		//MAX_SIZE = 20; => 이렇게 사용 안됨 위에서 초기화 했기 때문에 
 	}
 
 	private void generateCustomerId() {
