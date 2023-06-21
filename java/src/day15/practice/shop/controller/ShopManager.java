@@ -83,6 +83,7 @@ public class ShopManager {
 		}
 	}	
 	
+	//1)
 	private void sell() {
 		//제품명 입력
 		System.out.print("제품명 : ");
@@ -139,7 +140,8 @@ public class ShopManager {
 		}	
 		return 0;
 	}
-
+	
+	//2)
 	private void store() {
 		//입고할 제품명 입력
 		System.out.print("제품명 : ");
@@ -186,7 +188,6 @@ public class ShopManager {
 		//제품 리스트에 추가
 		list[count++] = new Product(name, modelName, price, amount, category);
 		System.out.println("제품 추가 후 입고 완료");
-		
 	}
 	/**제품 리스트에 제품명과 일치하는 제품이 있으면 번지를, 없으면 -1을 알려주는 메서드
 	 * 매개변수 : 제품명 => String name
@@ -201,7 +202,8 @@ public class ShopManager {
 		}
 		return -1;
 	}
-		
+	
+	//3)
 	//제품을 검색해서 조회하는 메서드
 	private void printProduct() {				
 		//검색할 제품을 입력
@@ -222,6 +224,7 @@ public class ShopManager {
 		System.out.println("없는 제품!");
 	}
 	
+	//4)
 	private void printSales() {
 		//매출 내역
 		for(int i = 0 ; i < salesCount ; i++) {
@@ -231,6 +234,7 @@ public class ShopManager {
 		System.out.println("누적 매출액" + totalPrice);
 	}
 	
+	//5)
 	private void registerCustomer() {
 		//고객 정보(이름, 전화번호)를 입력
 		System.out.print("이름 : ");
