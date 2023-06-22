@@ -24,7 +24,7 @@ public class InterfaceEx {
 		((Run)runInterface).load();
 		//위의 코드는 Run클래스의 객체로 클래스 변환이 되었기 때문에 load()메서드를 호술 할 수 있음
 		run(new ShopManager());
-		//run(new VocabularyNoteController()); 
+		run(new VocabularyNoteController()); 
 		//단어장, 판매관리 () 괄호안에 new ShopManager() 넣으면 이전꺼 불러 올 수 있음 => 인터페이스와 다형성 다시 공부하기!!!!!!!!
 	}
 

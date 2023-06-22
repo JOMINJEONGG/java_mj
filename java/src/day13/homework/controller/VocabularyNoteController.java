@@ -1,3 +1,5 @@
+package day13.homework.controller;
+
 import java.util.Scanner;
 
 import day13.homework.vo.VocabularyNote;
