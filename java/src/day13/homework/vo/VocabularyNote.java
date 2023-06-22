@@ -5,7 +5,7 @@ package day13.homework.vo;
  * - Word들의 모임
  * */
 
-public class VocabularyNote {
+public class VocabularyNote{
 	//멤버변수
 	//단어들
 	private Word wordList[];//단어들

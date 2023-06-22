@@ -75,7 +75,6 @@ public class InstancePolymorphismEx {
 			}
 		}
 	}
-
 }
 
 class HomeAppliances{
