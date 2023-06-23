@@ -65,8 +65,8 @@ public class StringEx1 {
 				
 		//12) String[] split(String regex) : regex에 맞는 문자열들을 기준으로 문자열들을 추출하여 배열로 반환. 토큰이라는 구분자를 이용하여 문자열들을 추출하여 배열로 반환
 		//split : 구분 자료 기준으로 문자열을 추출해서 순서대로 배열에 저장
-		String str5 = "사과, 배, 포도";
-		String fruits[] = str3.split(",");
+		String str5 = "사과,배,포도";
+		String fruits[] = str5.split(",");
 		for(String fruit : fruits) {
 			System.out.println("12번문제 " + fruit);
 		}
