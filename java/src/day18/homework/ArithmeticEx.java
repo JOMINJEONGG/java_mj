@@ -8,7 +8,6 @@ public class ArithmeticEx {
 		 * 	void run();
 		 * 	void printMenu();
 		 *	void runMenu(int menu);
-		 *}
 		 **/
 	}
 

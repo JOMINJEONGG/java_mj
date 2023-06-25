@@ -1,5 +1,8 @@
 package day18.homework;
 
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
 public class ImgEx {
 
 	public static void main(String[] args) {
@@ -12,7 +15,18 @@ public class ImgEx {
 		 * input : dog.exe
 		 * dog.exe : Not image
 		 * */
-
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("input : ");
+		String str = sc.nextLine();		
+		String regex = "^dog\\.(jpg|bmp|png)$";
+		boolean result = Pattern.matches(regex, str);
+		
+		if(result != true) {
+			System.out.println(str + " : " + "Not image");
+		}else {
+			System.out.println(str + " : " + "image");
+		}
+		sc.close();	
 	}
-
 }
