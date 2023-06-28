@@ -1,16 +1,15 @@
 package day21.homework.updown.contoller;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Scanner;
 
-import day21.practice.updown.vo.RecordGame;
+import day21.homework.updown.vo.RecordGame;
 
 public class GameManager implements Program {
 
 	//리터럴 3에 이름을 붙여서 명확하게 전달하기 위해.
 	private static final int EXIT = 3;
-	
+
 	//다른 메서드에서 매번 객체를 생성하는게 번거로워서
 	private Scanner sc = new Scanner(System.in);
 
@@ -23,21 +22,21 @@ public class GameManager implements Program {
 		System.out.println("2. Record");
 		System.out.println("3. EXIT");
 		System.out.print("Select Menu : ");
-		
+
 	}
 
 	@Override
 	public void run() {
 		System.out.println("Program Start!!");
-		
+
 		int menu;
 		do {
 			printMenu();
-			
+
 			menu = sc.nextInt();
-			
+
 			runMenu(menu);
-			
+
 		}while(menu != EXIT);
 	}
 
@@ -54,14 +53,14 @@ public class GameManager implements Program {
 		default:
 			System.out.println("Wrong menu!");
 		}
-		
+
 	}
 
 	private void recordGame() {
 		for(RecordGame tmp : list) {
 			System.out.println(tmp);
 		}
-		
+
 	}
 
 	private void playGame() {
@@ -77,7 +76,7 @@ public class GameManager implements Program {
 			//정수를 입력
 			System.out.println("input(1~100) : ");
 			num = sc.nextInt();
-			
+
 			//정수와 정답을 비교하여 판별
 			//num가 random보다 크면 Down!,아니고 num가 random보다 작으면 Up!, 아니면 Good!
 			if(num > random) {
@@ -91,30 +90,19 @@ public class GameManager implements Program {
 		}
 		//기록 : 아이디(입력), 플레이 횟수
 		//아이디 입력
+
+		if(list.size() == 5 &&  list.get(list.size()-1).getCount() <= count) {
+			return;
+		}
+		if(list.size() == 5) {
+			//마지막 기록을 삭제
+			list.remove(list.size()-1);
+		}
 		System.out.print("Record ID : ");
 		String id = sc.next();
-		//어떻게 저장해서 관리할 건가?
-		RecordGame rec = new RecordGame(id, count); 
+		RecordGame rec = new RecordGame(id, count);
 		list.add(rec);
 		//sort();
-		list.sort(new Comparator<RecordGame>() {
-
-			@Override
-			public int compare(RecordGame o1, RecordGame o2) {
-				return o1.getCount() - o2.getCount();
-			}
-		});
-	}
-	
-	private void sort() {
-		for(int i = 0; i<list.size()-1; i++) {
-			for(int j = 0; j<list.size()-1; j++) {
-				if(list.get(j).getCount() > list.get(j+1).getCount()) {
-					RecordGame tmp = list.get(j);
-					list.set(j, list.get(j+1));
-					list.set(j+1, tmp);
-				}
-			}
-		}
+		list.sort(null);
 	}
 }
