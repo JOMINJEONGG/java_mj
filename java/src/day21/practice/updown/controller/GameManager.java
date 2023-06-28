@@ -54,7 +54,6 @@ public class GameManager implements Program {
 		default:
 			System.out.println("Wrong menu!");
 		}
-		
 	}
 
 	private void recordGame() {
