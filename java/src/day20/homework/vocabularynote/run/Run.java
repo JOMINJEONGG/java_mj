@@ -1,5 +1,12 @@
 package day20.homework.vocabularynote.run;
 
+import day13.homework.controller.VocabularyNoteController;
+
 public class Run {
-	//13일차 과제인 영어 단어장코드를 리스트와 예외처리를 이용하여 수정하세요.
+
+	public static void main(String[] args) {
+		VocabularyNoteController controller = new VocabularyNoteController();
+		controller.run();
+	}
+
 }
