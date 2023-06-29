@@ -20,7 +20,7 @@ public class GameManager implements Program {
 
 		System.out.println("1. Play");
 		System.out.println("2. Record");
-		System.out.println("3. EXIT");
+		System.out.println("3. EXIT");	
 		System.out.print("Select Menu : ");
 
 	}
