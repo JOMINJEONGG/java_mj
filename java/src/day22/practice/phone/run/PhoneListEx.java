@@ -1,6 +1,6 @@
 package day22.practice.phone.run;
 
-import day22.practice.phone.controller.PhoneList;
+import day22.practice.phone.controller.PhoneManager;
 
 public class PhoneListEx {
 
@@ -12,7 +12,7 @@ public class PhoneListEx {
 		 * 4. 프로그램 종료
 		 */
 		
-		PhoneList list = new PhoneList();
+		PhoneManager list = new PhoneManager();
 		list.run();
 
 	}

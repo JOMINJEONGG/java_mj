@@ -4,14 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import day22.practice.phone.vo.Phone;
+import day22.practice.phone.vo.PhoneBook;
 import day22.practice.student.controller.Program;
 import day22.practice.student.vo.Student;
 
-public class PhoneList implements Program  {
+public class PhoneManager implements Program  {
 
-	private List<Phone> list = Arrays.asList(
-			new Phone("010-1234-5678","Hong")
+	private List<PhoneBook> list = Arrays.asList(
+			new PhoneBook("010-1234-5678","Hong")
 		);
 	private Scanner sc = new Scanner(System.in);
 	private static final int EXIT = 4;
@@ -73,7 +73,7 @@ public class PhoneList implements Program  {
 	}
 
 	private void search(String phonenum, String name) {
-		for(Phone tmp : list) {
+		for(PhoneBook tmp : list) {
 			if(tmp.equals(new Student(phonenum, name))) {
 			System.out.println(tmp);
 			}

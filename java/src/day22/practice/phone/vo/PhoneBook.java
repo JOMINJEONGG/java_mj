@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data	
 @AllArgsConstructor
-public class Phone {
+public class PhoneBook {
 	
 	String phonenum;
 	String name;
@@ -19,7 +19,7 @@ public class Phone {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Phone other = (Phone) obj;
+		PhoneBook other = (PhoneBook) obj;
 		return Objects.equals(name, other.name) && Objects.equals(phonenum, other.phonenum);
 	}
 	@Override
