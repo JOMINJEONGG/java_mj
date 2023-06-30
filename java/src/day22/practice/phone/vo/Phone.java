@@ -1,4 +1,4 @@
-package day22.practice.vo;
+package day22.practice.phone.vo;
 
 import java.util.Objects;
 
@@ -7,10 +7,10 @@ import lombok.Data;
 
 @Data	
 @AllArgsConstructor
-public class Student{
-	int grade, classNum, num;
-	String name;
+public class Phone {
 	
+	String phonenum;
+	String name;
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -19,12 +19,12 @@ public class Student{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Student other = (Student) obj;
-		return classNum == other.classNum && grade == other.grade && num == other.num;
+		Phone other = (Phone) obj;
+		return Objects.equals(name, other.name) && Objects.equals(phonenum, other.phonenum);
 	}
-	
 	@Override
 	public int hashCode() {
-		return Objects.hash(classNum, grade, num);
+		return Objects.hash(name, phonenum);
 	}
+	
 }

@@ -1,12 +1,12 @@
-package day22.practice.phonelist.controller;
+package day22.practice.phone.controller;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import day22.practice.controller.Program;
-import day22.practice.phonelist.vo.Phone;
-import day22.practice.vo.Student;
+import day22.practice.phone.vo.Phone;
+import day22.practice.student.controller.Program;
+import day22.practice.student.vo.Student;
 
 public class PhoneList implements Program  {
 
