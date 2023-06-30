@@ -10,85 +10,100 @@ import day22.practice.student.vo.Student;
 
 public class PhoneManager implements Program  {
 
-	private List<PhoneBook> list = Arrays.asList(
-			new PhoneBook("010-1234-5678","Hong")
-		);
 	private Scanner sc = new Scanner(System.in);
 	private static final int EXIT = 4;
+	private PhoneBook pb = new PhoneBook();
 	
 	@Override
 	public void printMenu() {
-		System.out.println("1. 전화번호 등록");
-		System.out.println("2. 전화번호 수정");
-		System.out.println("3. 전화번호 검색");
-		System.out.println("4. 프로그램 종료");	
-		System.out.print("Select : ");		
+		System.out.println("1. Insert");
+		System.out.println("2. Update");
+		System.out.println("3. Search");
+		System.out.println("4. EXIT");	
+		System.out.print("Select Menu: ");		
 	}
 
 	@Override
 	public void run() {
-		System.out.println("Program Start!!");
-
+		System.out.println("=========");
 		int menu;
 		do {
+			
 			printMenu();
 			menu = sc.nextInt();
 			runMenu(menu);
-
+			System.out.println("=========");
+				
 		}while(menu != EXIT);		
 	}
 
 	@Override
 	public void runMenu(int menu) {
-		String phonenum, name;
 		switch (menu) {
 		case 1:
-			System.out.println("등록할 전화번호 : ");
-			phonenum = sc.nextLine();
-			register();
+			insert();
 			break;
 		case 2:
-			System.out.println("전화번호 검색 : ");
-			phonenum = sc.nextLine();
-			System.out.println("이름 검색 : ");
-			name = sc.nextLine();
-		
-			change();
+			update();
 			break;
 		case 3:
-			System.out.println("전화번호 검색 : ");
-			phonenum = sc.nextLine();
-			System.out.println("이름 검색 : ");
-			name = sc.nextLine();
-			
-			search(phonenum, name);
+			search();
 			break;
 		case 4:
-			System.out.println("프로그램 종료");
+			System.out.println("EXIT");
 			break;		
 		default:
 			System.out.println("Wrong menu!");
 		}	
-		
 	}
 
-	private void search(String phonenum, String name) {
-		for(PhoneBook tmp : list) {
-			if(tmp.equals(new Student(phonenum, name))) {
-			System.out.println(tmp);
-			}
+	private void search() {
+		//검색할 이름을 입력
+		System.out.print("name : ");
+		sc.nextLine();
+		String name = sc.nextLine();
+		
+		//검색 결과를 출력
+		pb.print(s->s.getName().contains(name));//람다식
+		//pb.print(s->true);//전체 출력
+	}
+
+	private void update() {
+		//이름, 수정할 이름과 수정할 전화번호를 입력
+		System.out.print("name : ");
+		sc.nextLine();
+		String name = sc.nextLine();
+		
+		System.out.print("update name : ");
+		String updateName = sc.nextLine();
+		
+		System.out.println("number : ");
+		String number = sc.nextLine();
+		
+		//전화번호부에 추가를 해서 성고하면 성공이라고
+		if(pb.update(name, updateName, number)) {
+			System.out.println("Insert Success!!");
 		}
-		
+		//실패하면 실패했다고 출력
+		else {
+			System.out.println("Insert Fail!!");
+		}
 	}
 
-	private void change() {
-		// TODO Auto-generated method stub
-		
+	private void insert() {
+		//이름과 전화번호를 입력
+		System.out.print("name : ");
+		sc.nextLine();
+		String name = sc.nextLine();
+		System.out.println("number : ");
+		String number = sc.nextLine();
+		//전화번호부에 추가를 해서 성고하면 성공이라고
+		if(pb.insertPhone(name, number)) {
+			System.out.println("Insert Success!!");
+		}
+		//실패하면 실패했다고 출력
+		else {
+			System.out.println("Insert Fail!!");
+		}
 	}
-
-	private void register() {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }
